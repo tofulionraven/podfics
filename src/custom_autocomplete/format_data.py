@@ -36,12 +36,14 @@ class DataCleaner:
     def clean(self) -> None:
         data = pd.read_csv(self.config["raw_data"]["name"], header=0)
         data.columns = list(map(str.strip, data.columns))
-        (
+        data = (
             data.fillna("")
             .assign(Link=lambda x: x.Link.apply(format_links))
             [self.config["clean_data"]["used_fields"]]
-            .to_csv(self.config["clean_data"]["name"], index=False, header=True)
         )
+        data.to_csv(self.config["clean_data"]["name"], index=False, header=True)
+        data.to_json(self.config["clean_data"]["json"], orient="records")
+        
 
 
 def main() -> None:

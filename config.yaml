@@ -2,6 +2,7 @@ raw_data:
   name: ./data/raw.csv
 clean_data:
   name: ./data/clean.csv
+  json: ./data/clean.json
   used_fields:
     - Title
     - Podficcer
