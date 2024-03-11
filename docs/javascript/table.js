@@ -30,6 +30,8 @@ async function load_data() {
             {
                 title:"Ship",
                 field:"Ship",
+                headerFilter:"input",
+                headerFilterFunc:"like",
             },
             {
                 title:"Link",
@@ -41,12 +43,13 @@ async function load_data() {
         ],
         columnDefaults:{
             headerFilter:"list",
-            headerFilterFunc:"in",
+            headerFilterFunc:"=",
             headerFilterParams:{
                 valuesLookup:"active",
                 sort:"asc",
                 clearable: true,
-                multiselect:true,
+                // multiselect:true,
+                autocomplete:false,
             },
         }
     });
