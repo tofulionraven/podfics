@@ -20,16 +20,30 @@ async function load_data() {
                 width:"250",
             },
             {
-                title:"Podficcer",
-                field:"Podficcer",
+                title:"Podcaster",
+                field:"Podcaster",
+                headerFilterFunc:"like",
+                
             },
             {
                 title:"Author",
                 field:"Author",
             },
             {
-                title:"Ship",
-                field:"Ship",
+                title:"Recorded",
+                field:"Recorded",
+            },
+            {
+                title:"Status",
+                field:"Status",
+            },
+            {
+                title:"Time",
+                field:"Time",
+            },
+            {
+                title:"Ship or Main Character",
+                field:"Ship or Main Character",
                 headerFilter:"input",
                 headerFilterFunc:"like",
             },
@@ -42,8 +56,8 @@ async function load_data() {
             },
         ],
         columnDefaults:{
-            headerFilter:"list",
-            headerFilterFunc:"=",
+            headerFilter:"input",
+            headerFilterFunc:"like",
             headerFilterParams:{
                 valuesLookup:"active",
                 sort:"asc",

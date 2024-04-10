@@ -5,10 +5,15 @@ clean_data:
   json: ./data/clean.json
   used_fields:
     - Title
-    - Podficcer
+    - Podcaster
     - Author
-    - Ship
+    - Recorded
+    - Status
+    - Time
+    - Ship or Main Character
     - Link
+    - Secondary Link
+    - Third Link
   no_filter_fields:
     - Link
 website:
