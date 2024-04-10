@@ -30,11 +30,12 @@ async function load_data() {
                 title:"Podcaster",
                 field:"Podcaster",
                 headerFilterFunc:"like",
-                width:"250"
+                width:"150"
             },
             {
                 title:"Author",
                 field:"Author",
+                width:"150"
             },
             {
                 title:"Recorded",
@@ -51,6 +52,7 @@ async function load_data() {
             {
                 title:"Ship or Main Character",
                 field:"Ship or Main Character",
+                width:"150"
                 headerFilter:"input",
                 headerFilterFunc:"like",
 
