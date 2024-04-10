@@ -13,6 +13,13 @@ async function load_data() {
         paginationSize:30,  // Change number of rows displayed
         columns:[
             {
+            
+                title:"Link",
+                field:"Link",
+                formatter:"html",
+                headerFilter:null,
+                headerFilterFunc:null,
+            },{    
                 title:"Title",
                 field:"Title",
                 headerFilter:"input",
@@ -46,13 +53,7 @@ async function load_data() {
                 field:"Ship or Main Character",
                 headerFilter:"input",
                 headerFilterFunc:"like",
-            },
-            {
-                title:"Link",
-                field:"Link",
-                formatter:"html",
-                headerFilter:null,
-                headerFilterFunc:null,
+
             },
         ],
         columnDefaults:{
