@@ -29,7 +29,6 @@ async function load_data() {
             {
                 title:"Podcaster",
                 field:"Podcaster",
-                headerFilterFunc:"like",
                 width:"200"
             },
             {
