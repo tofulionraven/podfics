@@ -53,8 +53,6 @@ async function load_data() {
                 title:"Ship or Main Character",
                 field:"Ship or Main Character",
                 width:"200"
-                headerFilter:"input",
-                headerFilterFunc:"like",
 
             },
         ],
