@@ -18,5 +18,5 @@ clean_data:
     - Link
 website:
   data: ./data/sheet.csv
-  table_entries_per_page: 10
+  table_entries_per_page: 100
   autocomplete_max_length: 40
