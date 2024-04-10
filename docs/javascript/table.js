@@ -27,14 +27,19 @@ async function load_data() {
                 width:"250",
             },
             {
+                title:"Author",
+                field:"Author",
+                width:"200"
+            },
+            {
                 title:"Podcaster",
                 field:"Podcaster",
                 width:"200"
             },
             {
-                title:"Author",
-                field:"Author",
-                width:"200"
+                title:"Ship or Main Character",
+                field:"Ship or Main Character",
+                width:"150"
             },
             {
                 title:"Recorded",
@@ -47,11 +52,6 @@ async function load_data() {
             {
                 title:"Time",
                 field:"Time",
-            },
-            {
-                title:"Ship or Main Character",
-                field:"Ship or Main Character",
-                width:"200"
 
             },
         ],
