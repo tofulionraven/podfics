@@ -42,14 +42,6 @@ async function load_data() {
                 width:"150"
             },
             {
-                title:"Recorded",
-                field:"Recorded",
-            },
-            {
-                title:"Status",
-                field:"Status",
-            },
-            {
                 title:"Time",
                 field:"Time",
 
