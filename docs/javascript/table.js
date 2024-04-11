@@ -1,4 +1,4 @@
- const data_url = "https://raw.githubusercontent.com/tofulionraven/oh-sheet/main/data/clean.json";
+ const data_url = "https://raw.githubusercontent.com/tofulionraven/podfics/main/data/clean.json";
 //const data_url = "../data/clean.json"
 async function load_data() {
     var full_data;
