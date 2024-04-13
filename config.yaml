@@ -12,7 +12,7 @@ clean_data:
     - Time
     - Ship or Main Character
     - Link
-    - Secondary Link
+    - Spotify/stream
     - Third Link
   no_filter_fields:
     - Link
