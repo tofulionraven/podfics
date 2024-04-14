@@ -7,10 +7,13 @@ clean_data:
     - Title
     - Podcaster
     - Author
-    - Recorded
     - Status
     - Time
     - Ship or Main Character
+    - Link
+    - Spotify/stream
+    - Third Link
+  link_fields:
     - Link
     - Spotify/stream
     - Third Link
