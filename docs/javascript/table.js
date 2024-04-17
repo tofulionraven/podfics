@@ -1,10 +1,16 @@
- const data_url = "https://raw.githubusercontent.com/tofulionraven/podfics/main/data/clean.json";
-//const data_url = "../data/clean.json"
+const data_url = "https://raw.githubusercontent.com/tofulionraven/podfics/main/data/clean.json";
+const local_data_url = "../data/clean.json"
+
 async function load_data() {
     var full_data;
-    await fetch(data_url)
+    await fetch(local_data_url)
         .then((response) => response.json())
         .then(json => {full_data = json;})
+        .catch(
+            _error => fetch(data_url)
+            .then(response => response.json())
+            .then(json => {full_data = json;})
+        )
 
     new Tabulator("#table", {
         data:full_data, //assign data to table
@@ -14,18 +20,11 @@ async function load_data() {
         columns:[
             {
             
-                title:"AO3",
-                field: "Link",
+                title:"Link",
+                field:"Link",
                 formatter:"html",
                 headerFilter:null,
                 headerFilterFunc:null,
-            },{
-                title:"Spotify/stream",
-                field:"Spotify/stream",
-                formatter:"html",
-                headerFilter:null,
-                headerFilterFunc:null,
-                
             },{    
                 title:"Title",
                 field:"Title",
