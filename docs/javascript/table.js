@@ -25,7 +25,17 @@ async function load_data() {
                 formatter:"html",
                 headerFilter:null,
                 headerFilterFunc:null,
-            },{    
+            },
+            {
+            
+                title:"Spotify/Stream",
+                field:"Spotify/Stream",
+                formatter:"html",
+                headerFilter:null,
+                headerFilterFunc:null,
+            }
+            
+            {    
                 title:"Title",
                 field:"Title",
                 headerFilter:"input",
