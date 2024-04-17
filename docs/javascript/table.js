@@ -14,11 +14,18 @@ async function load_data() {
         columns:[
             {
             
-                title:"Link",
-                field:"Link",
+                title:"AO3",
+                field: "Link",
                 formatter:"html",
                 headerFilter:null,
                 headerFilterFunc:null,
+            },{
+                title:"Spotify/stream",
+                field:"Spotify/stream",
+                formatter:"html",
+                headerFilter:null,
+                headerFilterFunc:null,
+                
             },{    
                 title:"Title",
                 field:"Title",
