@@ -63,8 +63,8 @@ async function load_data() {
 
             },
             {
-                title: "Chapters"
-                field: "Chapters"
+                title: "Chapters",
+                field: "Chapters",
             }
         ],
         columnDefaults:{
