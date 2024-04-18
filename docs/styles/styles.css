@@ -1,6 +1,6 @@
 @import  "tabulator-tables";
 
-.link_icon img {
+img {
   max-width: 30px;
   max-height: 30px;
 }

@@ -12,13 +12,14 @@ image_maps = {
     "open.spotify.com": "./imgs/spotify.png",
     "soundcloud.com": "./imgs/soundcloud.png",
     "archive.org": "./imgs/archive.png",
-    "youtube.com": "./imgs/youtube.png",
+    "www.youtube.com": "./imgs/youtube.png",
     "drive.google.com": "./imgs/drive.png",
     # Add more images here "URL": "./images/filename.png",
 }
 
 def format_links(raw_link: str) -> str:
     stem = urlparse(raw_link).netloc
+    
     if stem:
         img_link = image_maps[stem] if stem in image_maps else "./imgs/default.png"
         return f'<a href="{raw_link}" target="_blank"><img src="{img_link}" alt="{Path(img_link).stem}" class="link_icon"></a>'
