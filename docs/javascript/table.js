@@ -20,16 +20,16 @@ async function load_data() {
         columns:[
             {
             
-                title:"Link",
-                field:"ao3",
+                title:"Stream",
+                field:"other",
                 formatter:"html",
                 headerFilter:null,
                 headerFilterFunc:null,
             },
             {
             
-                title:"Stream",
-                field:"other",
+                title:"Link",
+                field:"ao3",
                 formatter:"html",
                 headerFilter:null,
                 headerFilterFunc:null,

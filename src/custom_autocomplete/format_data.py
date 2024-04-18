@@ -10,10 +10,7 @@ import yaml
 image_maps = {
     "archiveofourown.org": "./imgs/archive_of_our_own.png",
     "open.spotify.com": "./imgs/spotify.png",
-    "soundcloud.com": "./imgs/soundcloud.png",
     "archive.org": "./imgs/archive.png",
-    "www.youtube.com": "./imgs/youtube.png",
-    "drive.google.com": "./imgs/drive.png",
     # Add more images here "URL": "./images/filename.png",
 }
 
@@ -81,6 +78,7 @@ class DataCleaner:
             .assign(
                 ao3=lambda x: x.ao3.apply(format_links),
                 other=lambda x: x.other.apply(format_links)
+                
             )
             .drop(columns=["is_ao3"])
             .fillna("")
