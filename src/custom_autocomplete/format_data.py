@@ -19,7 +19,7 @@ image_maps = {
 
 def format_links(raw_link: str) -> str:
     stem = urlparse(raw_link).netloc
-    
+
     if stem:
         img_link = image_maps[stem] if stem in image_maps else "./imgs/default.png"
         return f'<a href="{raw_link}" target="_blank"><img src="{img_link}" alt="{Path(img_link).stem}" class="link_icon"></a>'
