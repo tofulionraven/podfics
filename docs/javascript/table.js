@@ -33,7 +33,7 @@ async function load_data() {
                 formatter:"html",
                 headerFilter:null,
                 headerFilterFunc:null,
-            }
+            },
             
             {    
                 title:"Title",
@@ -64,7 +64,7 @@ async function load_data() {
             },
             {
                 title: "Chapters"
-                field: "Chapters/Length"
+                field: "Chapters"
             }
         ],
         columnDefaults:{
