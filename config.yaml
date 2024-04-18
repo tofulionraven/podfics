@@ -8,6 +8,7 @@ clean_data:
     - Podcaster
     - Author
     - Status
+    - Chapters
     - Time
     - Ship or Main Character
     - Link
