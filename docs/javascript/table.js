@@ -62,6 +62,10 @@ async function load_data() {
                 field:"Time",
 
             },
+            {
+                title: "Chapters"
+                field: "Chapters/Length"
+            }
         ],
         columnDefaults:{
             headerFilter:"input",
