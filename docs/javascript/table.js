@@ -21,15 +21,15 @@ async function load_data() {
             {
             
                 title:"Link",
-                field:"Link",
+                field:"ao3",
                 formatter:"html",
                 headerFilter:null,
                 headerFilterFunc:null,
             },
             {
             
-                title:"Spotify/Stream",
-                field:"Spotify/Stream",
+                title:"Stream",
+                field:"other",
                 formatter:"html",
                 headerFilter:null,
                 headerFilterFunc:null,
@@ -48,22 +48,23 @@ async function load_data() {
                 width:"200"
             },
             {
-                title:"Podcaster",
+                title:"Podficcer",
                 field:"Podcaster",
                 width:"200"
             },
             {
-                title:"Ship or Main Character",
+                title:"Ship/Character",
                 field:"Ship or Main Character",
                 width:"150"
             },
             {
-                title:"Time",
+                title:"Length",
                 field:"Time",
-
+                headerFilter: "select",
+                headerFilterFunc: "=",
             },
             {
-                title: "Chapters",
+                title: "Status",
                 field: "Chapters",
             }
         ],

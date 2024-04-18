@@ -14,6 +14,7 @@ image_maps = {
     "archive.org": "./imgs/archive.png",
     "youtube.com": "./imgs/youtube.png",
     "drive.google.com": "./imgs/drive.png",
+    # Add more images here "URL": "./images/filename.png",
 }
 
 def format_links(raw_link: str) -> str:
