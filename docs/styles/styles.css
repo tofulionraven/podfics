@@ -41,5 +41,6 @@ table tr:nth-child(even) td{
 }
 
 #phone-table{
+  display: none;
   visibility: hidden;
 }

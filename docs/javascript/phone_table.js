@@ -1,3 +1,9 @@
+// TODO: Wait until multiple characters are entered before searching
+// TODO: Ignore spaces/empty elements in the search  DONE
+// TODO: Layout is inconsisent (search bar not on top/too low; cards too wide, bottom stuff should be a footer)
+// TODO: Add links and other elements
+// TODO: When scrolling move up until the top of the screen is hit, then start collapsing.
+
 const data_url = "https://raw.githubusercontent.com/tofulionraven/podfics/main/data/clean.json";
 const local_data_url = "../data/clean.json"
 let table;
@@ -13,13 +19,17 @@ function debounce(fn, duration) {
 
 function searchChange(field){
     const terms = field.target.value.split(" ")
+    const cleanTerms = terms.filter(term => term.length > 2)
+    console.log(cleanTerms)
     const searchFields = ["Title", "Author", "Podcaster", "Ship or Main Character"]
     let results = []
-    searchFields.forEach(field => {
-            terms.forEach(term => results = results.concat(table.searchRows(field, "like", term)))
-        }
-    )
-    updateCards(null, results)
+    if (cleanTerms.length !== 0){
+        searchFields.forEach(field => {
+                cleanTerms.forEach(term => results = results.concat(table.searchRows(field, "like", term)))
+            }
+        )
+        updateCards(null, results)
+    }
 }
 
 function createCard(data) {
