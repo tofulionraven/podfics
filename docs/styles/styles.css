@@ -18,3 +18,28 @@ table tr:nth-child(even) td{
   background-color: #fff;
   border: 1px solid #ccc;
 }
+
+.topbar{
+  position: fixed;
+  z-index: 999;
+}
+
+#cards {
+  margin-inline: 2%;
+  width:400px;
+  max-width: 400px;
+  margin-top: 20px
+}
+
+.card {
+  position: sticky;
+  top: 120px;
+  background: white;
+  padding: 0.25rem 1rem 1.5rem 1rem;
+  box-shadow: 0 -0.5rem 1rem rgba(0 0 0 / 0.15);
+  border-radius: 4px;
+}
+
+#phone-table{
+  visibility: hidden;
+}
