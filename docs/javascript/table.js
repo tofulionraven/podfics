@@ -66,7 +66,12 @@ async function load_data() {
             {
                 title: "Status",
                 field: "Chapters",
+            },
+            {
+                title: "Complete",
+                field: "Status",
             }
+            
         ],
         columnDefaults:{
             headerFilter:"input",
