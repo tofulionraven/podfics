@@ -25,6 +25,7 @@ async function load_data() {
                 formatter:"html",
                 headerFilter:null,
                 headerFilterFunc:null,
+                width: "50",
             },
             {
             
@@ -33,6 +34,7 @@ async function load_data() {
                 formatter:"html",
                 headerFilter:null,
                 headerFilterFunc:null,
+                width: "50",
             },
             
             {    
