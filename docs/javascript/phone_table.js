@@ -60,7 +60,11 @@ function createCard(data) {
     details = document.createElement("div")
     details.classList.add("card-detail")
     mainInfo.innerHTML = `<h3>${data.Title}</h3>`
-    details.innerHTML = `<ul><li>Author: ${data.Author}</li><li>Podcaster: ${data.Podcaster}</ul>`
+    // https://fontawesome.com/search?
+    details.innerHTML = `<ul class="no-bullets">
+    <li><i class="fa-solid fa-feather-pointed"></i> ${data.Author}</li>
+    <li><i class="fa-solid fa-microphone-lines"></i> ${data.Podcaster}
+    </ul>`
     expanded = document.createElement("div")
     expanded.classList.add("card-expanded")
     expanded.innerHTML = "Expanded content..."
