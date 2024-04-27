@@ -2,7 +2,8 @@
 // TODO: Ignore spaces/empty elements in the search  DONE
 // TODO: Layout is inconsisent (search bar not on top/too low; cards too wide, bottom stuff should be a footer)
 // TODO: Add links and other elements
-// TODO: When scrolling move up until the top of the screen is hit, then start collapsing.
+// TODO: When scrolling move up until the top of the screen is hit, then start collapsing. DONE
+// TODO: Show the number of hits
 
 const data_url = "https://raw.githubusercontent.com/tofulionraven/podfics/main/data/clean.json";
 const local_data_url = "../data/clean.json"
@@ -20,7 +21,6 @@ function debounce(fn, duration) {
 function searchChange(field){
     const terms = field.target.value.split(" ")
     const cleanTerms = terms.filter(term => term.length > 2)
-    console.log(cleanTerms)
     const searchFields = ["Title", "Author", "Podcaster", "Ship or Main Character"]
     let results = []
     if (cleanTerms.length !== 0){
@@ -28,7 +28,24 @@ function searchChange(field){
                 cleanTerms.forEach(term => results = results.concat(table.searchRows(field, "like", term)))
             }
         )
-        updateCards(null, results)
+    }
+    else{
+        results = table.getRows()
+    }
+    updateCards(null, results)
+}
+
+function toggleCard(_event){
+    if (_event.target.className !== "card"){
+        toggleCard({target: _event.target.parentElement})
+        return
+    }
+    let internal = _event.target.querySelector(".card-expanded")
+    if (internal.style.display === "none"){
+        internal.style.display = "block"
+    }
+    else{
+        internal.style.display = "none"
     }
 }
 
@@ -41,9 +58,15 @@ function createCard(data) {
     details.classList.add("card-detail")
     mainInfo.innerHTML = `<h3>${data.Title}</h3>`
     details.innerHTML = `<ul><li>Author: ${data.Author}</li><li>Podcaster: ${data.Podcaster}</ul>`
+    expanded = document.createElement("div")
+    expanded.classList.add("card-expanded")
+    expanded.innerHTML = "Expanded content..."
+    expanded.style.display = "none"
 
     card.appendChild(mainInfo)
     card.appendChild(details)
+    card.appendChild(expanded)
+    card.addEventListener("click", toggleCard)
     return card
 }
 function updateCards(_filters, rows){
@@ -136,4 +159,5 @@ async function load_data() {
     })
     table.on("dataFiltered", updateCards)
     document.getElementById("gen").addEventListener("keyup", searchChange, 300)
+    document.getElementById("top-form").addEventListener("submit", event => event.preventDefault())
 }
