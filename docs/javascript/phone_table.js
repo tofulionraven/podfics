@@ -10,30 +10,33 @@ const local_data_url = "../data/clean.json"
 let table;
 
 // https://stackoverflow.com/a/35045402
-function debounce(fn, duration) {
+// https://www.syncfusion.com/blogs/post/javascript-debounce-vs-throttle
+function debounce(fn, duration = 1000) {
   var timer;
-  return function(){
+  return (...args) => {
     clearTimeout(timer);
-    timer = setTimeout(fn, duration);
+    timer = setTimeout(() => {fn(...args)}, duration);
   }
 }
 
-function searchChange(field){
-    const terms = field.target.value.split(" ")
-    const cleanTerms = terms.filter(term => term.length > 2)
-    const searchFields = ["Title", "Author", "Podcaster", "Ship or Main Character"]
-    let results = []
-    if (cleanTerms.length !== 0){
-        searchFields.forEach(field => {
-                cleanTerms.forEach(term => results = results.concat(table.searchRows(field, "like", term)))
-            }
-        )
-    }
-    else{
-        results = table.getRows()
-    }
-    updateCards(null, results)
-}
+const searchChange = debounce((field) => {
+        const terms = field.target.value.split(" ")
+        const cleanTerms = terms.filter(term => term.length > 2)
+        const searchFields = ["Title", "Author", "Podcaster", "Ship or Main Character"]
+        let results = []
+        if (cleanTerms.length !== 0){
+            searchFields.forEach(field => {
+                    cleanTerms.forEach(term => results = results.concat(table.searchRows(field, "like", term)))
+                }
+            )
+        }
+        else{
+            results = table.getRows()
+        }
+        updateCards(null, results)
+    },
+    300
+)
 
 function toggleCard(_event){
     if (_event.target.className !== "card"){
@@ -72,6 +75,9 @@ function createCard(data) {
 function updateCards(_filters, rows){
     //filters - array of filters currently applied
     //rows - array of row components that pass the filters
+    console.log("hi")
+    let numResults = document.getElementById("num-results")
+    numResults.innerHTML = `Results: ${rows.length}`
     let cards = document.getElementById("cards")
     cards.innerHTML = ""
     rows.forEach(row => cards.appendChild(createCard(row._row.data)))
@@ -158,6 +164,6 @@ async function load_data() {
         visible:false,
     })
     table.on("dataFiltered", updateCards)
-    document.getElementById("gen").addEventListener("keyup", searchChange, 300)
+    document.getElementById("gen").addEventListener("keyup", searchChange)
     document.getElementById("top-form").addEventListener("submit", event => event.preventDefault())
 }
