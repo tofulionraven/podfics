@@ -61,13 +61,20 @@ function createCard(data) {
     details.classList.add("card-detail")
     mainInfo.innerHTML = `<h3>${data.Title}</h3>`
     // https://fontawesome.com/search?
-    details.innerHTML = `<ul class="no-bullets">
+    let ship = data["Ship or Main Character"]
+    if (ship.includes("/")){
+        htmlShip = `<li><i class="fa-solid fa-heart"></i> ${ship}</li>`
+    }
+    else{
+        htmlShip = `<li><i class="fa-solid fa-wand-sparkles"></i> ${ship}</li>`
+    }
+    details.innerHTML = `<ul class="no-bullets">${htmlShip}</ul>`
+    expanded = document.createElement("div")
+    expanded.classList.add("card-expanded")
+    expanded.innerHTML = `<ul class="no-bullets">
     <li><i class="fa-solid fa-feather-pointed"></i> ${data.Author}</li>
     <li><i class="fa-solid fa-microphone-lines"></i> ${data.Podcaster}
     </ul>`
-    expanded = document.createElement("div")
-    expanded.classList.add("card-expanded")
-    expanded.innerHTML = "Expanded content..."
     expanded.style.display = "none"
 
     card.appendChild(mainInfo)
@@ -79,7 +86,6 @@ function createCard(data) {
 function updateCards(_filters, rows){
     //filters - array of filters currently applied
     //rows - array of row components that pass the filters
-    console.log("hi")
     let numResults = document.getElementById("num-results")
     numResults.innerHTML = `Results: ${rows.length}`
     let cards = document.getElementById("cards")
