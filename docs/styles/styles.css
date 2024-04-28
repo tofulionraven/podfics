@@ -38,7 +38,7 @@ table tr:nth-child(even) td{
 .card {
   position: sticky;
   top: 50px;
-  background-color:bisque;
+  background-color:rgb(245, 245, 245);
   padding: 0rem 0rem 0rem 1rem;
   /* box-shadow: 0 -0.5rem 1rem rgba(0 0 0 / 0.10); */
   border-radius: 4px;
@@ -100,7 +100,7 @@ table tr:nth-child(even) td{
 }
 
 body{
-  background-color: antiquewhite;
+  background-color: rgb(255, 255, 255);
   font-family: optima;
 }
 
