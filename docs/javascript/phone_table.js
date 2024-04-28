@@ -8,7 +8,7 @@
 const data_url = "https://raw.githubusercontent.com/tofulionraven/podfics/main/data/phone_clean.json";
 const local_data_url = "../data/phone_clean.json"
 let table;
-let collapsedHeight = "80px"
+let collapsedHeight = "85px"
 let expandedHeight = "200px"
 
 
@@ -25,7 +25,7 @@ function debounce(fn, duration = 1000) {
 const searchChange = debounce((field) => {
         const terms = field.target.value.split(" ")
         const cleanTerms = terms.filter(term => term.length > 2)
-        const searchFields = ["Title", "Author", "Podcaster", "Ship or Main Character"]
+        const searchFields = ["Title", "Author", "Podcaster", "Ship or Main Character", "ao3", "other"]
         let results = []
         if (cleanTerms.length !== 0){
             searchFields.forEach(field => {

@@ -2,8 +2,9 @@
 
 
 img {
-  max-width: 30px;
+  max-width: 25px;
   max-height: 30px;
+  padding-right: 2px;
 }
 table tr:nth-child(odd) td{
   background:#ccc;
@@ -48,28 +49,34 @@ table tr:nth-child(even) td{
   transition: max-height 0.75s ease 0s;
 }
 
+.card-collapsed-content{
+  height: max-content;
+}
+
 .card-collapsed-text{
   float: none;
-  width: 403px;
+  height: auto;
+  width: 90%;
   display: inline-block;
 }
 
 .links {
-  width: 23px;
+  width: 30px;
+  max-width: 30px;
   float: right;
   margin: 2px;
   margin-top: 10px;
-  height: 80px;
-  max-height: 80px;
 }
 
 .content{
   float: none;
-  width: 300px;
+  width: auto;
   display: inline-block;
 }
+
 .info {
-  width: 70px;
+  max-width: 70px;
+  min-width: 70px;
   float: right;
   margin: 2px;
   margin-top: 10px;
@@ -87,7 +94,7 @@ table tr:nth-child(even) td{
 }
 .main {
   padding: 1rem;
-  max-width: 400px;
+  max-width: 375px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -126,4 +133,14 @@ a:hover {
 /* selected link */
 a:active {
   color: gold;
+}
+
+
+@media only screen and (min-width: 450px) {
+  .main {
+    padding: 1rem;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

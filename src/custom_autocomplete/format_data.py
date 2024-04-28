@@ -15,9 +15,9 @@ image_maps = {
 }
 
 fa_maps = {
-    "archiveofourown.org": "fa-solid fa-a",
+    "archiveofourown.org": "./imgs/archive_of_our_own.png",
+    "archive.org": "./imgs/archive.png",
     "spotify": "fa-brands fa-spotify",
-    "archive.org": "fa-solid fa-box-archive",
     "drive.google.com": "fa-brands fa-google-drive",
     "rss.com": "fa-solid fa-rss",
     "soundcloud.com": "fa-brands fa-soundcloud",
@@ -33,6 +33,8 @@ def format_fa_links(raw_link: str) -> str:
 
     if stem:
         img_link = fa_maps[stem] if stem in fa_maps else "fa-link"
+        if "archive" in str(stem):
+            return f'<a href="{raw_link}" target="_blank"><img src="{img_link}" alt="{Path(img_link).stem}" class="link_icon"></a>'
         return f'<a href="{raw_link}" target="_blank"><i class="{img_link}" alt="{stem}"></i></a>'
     return ""
 
