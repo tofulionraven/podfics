@@ -67,11 +67,11 @@ async function load_data() {
             },
             {
                 title: "Status",
-                field: "Chapters",
+                field: "Status",
             },
             {
-                title: "Complete",
-                field: "Status",
+                title: "Chapters",
+                field: "Chapters",
             }
             
         ],

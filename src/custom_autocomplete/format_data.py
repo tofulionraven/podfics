@@ -101,8 +101,8 @@ class DataCleaner:
             .assign(is_ao3=lambda x: ~x.ao3.isnull())
             .sort_values(["is_ao3", "Title"], ascending=[False, True])
             .assign(
-                ao3=lambda x: x.ao3.apply(format_fa_links),
-                other=lambda x: x.other.apply(format_fa_links)
+                ao3=lambda x: x.ao3.apply(format_links),
+                other=lambda x: x.other.apply(format_links)
             )
             .drop(columns=["is_ao3"])
             .fillna("")
