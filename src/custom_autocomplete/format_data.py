@@ -14,6 +14,31 @@ image_maps = {
     # Add more images here "URL": "./images/filename.png",
 }
 
+fa_maps = {
+    "archiveofourown.org": "./imgs/archive_of_our_own.png",
+    "archive.org": "./imgs/archive.png",
+    "spotify": "fa-brands fa-spotify",
+    "drive.google.com": "fa-brands fa-google-drive",
+    "rss.com": "fa-solid fa-rss",
+    "soundcloud.com": "fa-brands fa-soundcloud",
+    "www.youtube.com": "fa-brands fa-youtube",
+    "youtu.be": "fa-brands fa-youtube",
+    
+}
+
+def format_fa_links(raw_link: str) -> str:
+    stem = urlparse(raw_link).netloc
+    if "spotify" in str(stem):
+        stem = "spotify"
+
+    if stem:
+        img_link = fa_maps[stem] if stem in fa_maps else "fa-link"
+        if "archive" in str(stem):
+            return f'<a href="{raw_link}" target="_blank"><img src="{img_link}" alt="{Path(img_link).stem}" class="link_icon"></a>'
+        return f'<a href="{raw_link}" target="_blank"><i class="{img_link}" alt="{stem}"></i></a>'
+    return ""
+
+
 def format_links(raw_link: str) -> str:
     stem = urlparse(raw_link).netloc
 
@@ -76,9 +101,8 @@ class DataCleaner:
             .assign(is_ao3=lambda x: ~x.ao3.isnull())
             .sort_values(["is_ao3", "Title"], ascending=[False, True])
             .assign(
-                ao3=lambda x: x.ao3.apply(format_links),
-                other=lambda x: x.other.apply(format_links)
-                
+                ao3=lambda x: x.ao3.apply(format_fa_links),
+                other=lambda x: x.other.apply(format_fa_links)
             )
             .drop(columns=["is_ao3"])
             .fillna("")
