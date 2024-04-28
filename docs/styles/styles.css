@@ -1,5 +1,6 @@
 @import  "tabulator-tables";
 
+
 img {
   max-width: 30px;
   max-height: 30px;
@@ -28,8 +29,8 @@ table tr:nth-child(even) td{
 }
 
 #cards {
-  width:400px;
-  max-width: 400px;
+  width:450px;
+  max-width: 450px;
   margin-top: 20px
 }
 
@@ -42,6 +43,38 @@ table tr:nth-child(even) td{
   border-radius: 4px;
   content-visibility: auto;
   border: solid;
+  height: auto;
+  overflow: hidden;
+  transition: max-height 0.75s ease 0s;
+}
+
+.card-collapsed-text{
+  float: none;
+  width: 403px;
+  display: inline-block;
+}
+
+.links {
+  width: 23px;
+  float: right;
+  margin: 2px;
+  margin-top: 10px;
+  height: 80px;
+  max-height: 80px;
+}
+
+.content{
+  float: none;
+  width: 300px;
+  display: inline-block;
+}
+.info {
+  width: 70px;
+  float: right;
+  margin: 2px;
+  margin-top: 10px;
+  height: 80px;
+  max-height: 80px;
 }
 
 #phone-table{
@@ -68,4 +101,29 @@ ul.no-bullets {
   list-style-type: none; /* Remove bullets */
   padding: 0; /* Remove padding */
   margin: 0; /* Remove margins */
+}
+
+
+i {
+  font-size: x-large;
+}
+
+/* unvisited link */
+a:link {
+  color: black;
+}
+
+/* visited link */
+a:visited {
+  color: goldenrod;
+}
+
+/* mouse over link */
+a:hover {
+  color: crimson;
+}
+
+/* selected link */
+a:active {
+  color: gold;
 }
