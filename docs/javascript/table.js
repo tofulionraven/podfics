@@ -25,7 +25,7 @@ async function load_data() {
                 formatter:"html",
                 headerFilter:null,
                 headerFilterFunc:null,
-                width: "70",
+                width: "45",
                 resizable: false,
             },
             {
@@ -35,7 +35,7 @@ async function load_data() {
                 formatter:"html",
                 headerFilter:null,
                 headerFilterFunc:null,
-                width: "70",
+                width: "45",
                 resizable: false,
             },
             
@@ -61,14 +61,15 @@ async function load_data() {
                 field: "FANDOM NAME",
                 headerFilter: "select",
                 headerFilterFunc: "=",
-                width: "100",
+                width: "80",
                 resizable: false,
             
             },
             {
                 title:"Ship/Character",
                 field:"Ship or Main Character",
-                width:"150",
+                width:"120",
+                resizable: false,
             },
 
             {
@@ -76,14 +77,17 @@ async function load_data() {
                 field:"Time",
                 headerFilter: "select",
                 headerFilterFunc: "=",
+                resizable: false,
             },
             {
                 title: "Status",
                 field: "Status",
+                resizable: false,
             },
             {
                 title: "Chapters",
                 field: "Chapters",
+                resizable: false,
             }
             
         ],
