@@ -17,6 +17,7 @@ async function load_data() {
         layout:"fitData", //fit columns to width of table (optional)
         pagination:true,
         paginationSize:30,  // Change number of rows displayed
+        
         columns:[
             {
             
@@ -68,7 +69,7 @@ async function load_data() {
             {
                 title:"Ship/Character",
                 field:"Ship or Main Character",
-                width:"120",
+                width:"200",
                 resizable: false,
             },
 
