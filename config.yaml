@@ -14,6 +14,7 @@ clean_data:
     - Link
     - Spotify/stream
     - Third Link
+    - FANDOM NAME
   link_fields:
     - Link
     - Spotify/stream

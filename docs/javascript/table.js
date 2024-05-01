@@ -47,18 +47,23 @@ async function load_data() {
             {
                 title:"Author",
                 field:"Author",
-                width:"200"
+                width:"200",
             },
             {
                 title:"Podficcer",
                 field:"Podcaster",
-                width:"200"
+                width:"200",
+            },
+            {
+                title: "Ship Name",
+                field: "FANDOM NAME",
             },
             {
                 title:"Ship/Character",
                 field:"Ship or Main Character",
-                width:"150"
+                width:"150",
             },
+
             {
                 title:"Length",
                 field:"Time",
