@@ -26,6 +26,7 @@ async function load_data() {
                 headerFilter:null,
                 headerFilterFunc:null,
                 width: "50",
+                resizable: false,
             },
             {
             
@@ -35,6 +36,7 @@ async function load_data() {
                 headerFilter:null,
                 headerFilterFunc:null,
                 width: "50",
+                resizable: false,
             },
             
             {    
