@@ -25,7 +25,7 @@ async function load_data() {
                 formatter:"html",
                 headerFilter:null,
                 headerFilterFunc:null,
-                width: "50",
+                width: "70",
                 resizable: false,
             },
             {
@@ -35,7 +35,7 @@ async function load_data() {
                 formatter:"html",
                 headerFilter:null,
                 headerFilterFunc:null,
-                width: "50",
+                width: "70",
                 resizable: false,
             },
             
@@ -61,6 +61,8 @@ async function load_data() {
                 field: "FANDOM NAME",
                 headerFilter: "select",
                 headerFilterFunc: "=",
+                width: "100",
+                resizable: false,
             
             },
             {
