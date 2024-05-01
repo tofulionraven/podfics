@@ -62,15 +62,16 @@ async function load_data() {
                 field: "FANDOM NAME",
                 headerFilter: "select",
                 headerFilterFunc: "=",
-                width: "80",
+                width: "120",
                 resizable: false,
             
             },
             {
-                title:"Ship/Character",
+                title:"Characters",
                 field:"Ship or Main Character",
+                headerFilter: "select",
+                headerFilterFunc: "=",
                 width:"200",
-                resizable: false,
             },
 
             {
