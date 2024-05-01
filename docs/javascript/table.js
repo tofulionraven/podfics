@@ -55,8 +55,11 @@ async function load_data() {
                 width:"200",
             },
             {
-                title: "Ship Name",
+                title: "Ship",
                 field: "FANDOM NAME",
+                headerFilter: "select",
+                headerFilterFunc: "=",
+            
             },
             {
                 title:"Ship/Character",
