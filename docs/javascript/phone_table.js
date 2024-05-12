@@ -93,12 +93,12 @@ function createCard(data) {
 
     let ship = data["Ship or Main Character"]
     if (ship.includes("/")){
-        htmlShip = `<li><i class="fa-solid fa-heart"></i> ${ship}</li>`
+   // htmlShip = `<li><i class="fa-solid fa-heart"></i> ${ship}</li>`
     }
     else{
-        htmlShip = `<li><i class="fa-solid fa-wand-sparkles"></i> ${data.ship}</li>` 
+    //    htmlShip = `<li><i class="fa-solid fa-wand-sparkles"></i> ${data.ship}</li>` 
     }
-    </ul>`
+    //</ul>`
 
     
         
