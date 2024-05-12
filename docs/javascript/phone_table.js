@@ -57,6 +57,7 @@ function toggleCard(event){
 function createCard(data) {
     card = document.createElement("div")
     card.classList.add("card")
+    card.classList.add("card-2")
     card.style.maxHeight = collapsedHeight
 
     // Always visible info
@@ -73,15 +74,7 @@ function createCard(data) {
 
     mainInfo.innerHTML = `<h3>${data.Title}</h3>`
     // https://fontawesome.com/search?
-    let ship = data["Ship or Main Character"]
-    if (ship.includes("/")){
-        htmlShip = `<li><i class="fa-solid fa-heart"></i> ${ship}</li>`
-    }
-    else{
-        htmlShip = `<li><i class="fa-solid fa-wand-sparkles"></i> ${ship}</li>`
-    }
-    details.innerHTML = `<ul class="no-bullets">${htmlShip}</ul>`
-    links.innerHTML = `<div>${data.ao3}</div><div>${data.other}</div>`
+
 
     expandedContent = document.createElement("div")
     fullContent = document.createElement("div")
@@ -89,11 +82,29 @@ function createCard(data) {
     info = document.createElement("div")
     info.classList.add("info")
 
-    fullContent.innerHTML = `<ul class="no-bullets">
+    details.innerHTML = `<ul class="no-bullets">
     <li><i class="fa-solid fa-feather-pointed"></i> ${data.Author}</li>
     <li><i class="fa-solid fa-microphone-lines"></i> ${data.Podcaster}
     </ul>`
-    info.innerHTML = `<div>${data.Status}</div><div>${data.Time}</div>`
+
+    details.innerHTML = `<ul class="no-bullets">
+    <li><i class="fa-solid fa-feather-pointed"></i> ${data.Author}</li>
+    <li><i class="fa-solid fa-microphone-lines"></i> ${data.Podcaster}
+
+    let ship = data["Ship or Main Character"]
+    if (ship.includes("/")){
+        htmlShip = `<li><i class="fa-solid fa-heart"></i> ${ship}</li>`
+    }
+    else{
+        htmlShip = `<li><i class="fa-solid fa-wand-sparkles"></i> ${data.ship}</li>` 
+    }
+    </ul>`
+
+    
+        
+    
+    //links.innerHTML = `<div>${data.ao3}</div><div>${data.other}</div>`
+    //fullContent.innerHTML = `<div>${data.Status}</div><div>${data.Time}</div>`
 
     // Assemble the containers into the card
     collapsedText.appendChild(mainInfo)
