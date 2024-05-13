@@ -54,6 +54,38 @@ function toggleCard(event){
     }
 }
 
+function createCard2(data){
+    card = document.createElement("div")
+    title = document.createElement("div")
+    details = document.createElement("div")
+    links = document.createElement("div")
+
+    /*
+
+    Card
+
+     | Title           | Time |
+     --------------------------
+     | details         | Links|
+     |                 |      |
+     ...
+     |                 |      |
+
+
+     Card
+
+     | Title                  |
+     --------------------------
+     horizonal
+     | Links   A B C   | Time |
+     --------------------------
+     | details                |
+     ...                      |
+     |                        |
+
+    */
+}
+
 function createCard(data) {
     card = document.createElement("div")
     card.classList.add("card")
@@ -87,22 +119,14 @@ function createCard(data) {
     <li><i class="fa-solid fa-microphone-lines"></i> ${data.Podcaster}
     </ul>`
 
-    details.innerHTML = `<ul class="no-bullets">
-    <li><i class="fa-solid fa-feather-pointed"></i> ${data.Author}</li>
-    <li><i class="fa-solid fa-microphone-lines"></i> ${data.Podcaster}
-
     let ship = data["Ship or Main Character"]
     if (ship.includes("/")){
-   // htmlShip = `<li><i class="fa-solid fa-heart"></i> ${ship}</li>`
+    htmlShip = `<li><i class="fa-solid fa-heart"></i> ${ship}</li>`
     }
     else{
-    //    htmlShip = `<li><i class="fa-solid fa-wand-sparkles"></i> ${data.ship}</li>` 
+      htmlShip = `<li><i class="fa-solid fa-wand-sparkles"></i> ${data.ship}</li>` 
     }
-    //</ul>`
 
-    
-        
-    
     //links.innerHTML = `<div>${data.ao3}</div><div>${data.other}</div>`
     //fullContent.innerHTML = `<div>${data.Status}</div><div>${data.Time}</div>`
 
@@ -120,6 +144,7 @@ function createCard(data) {
     card.addEventListener("click", toggleCard)
     return card
 }
+
 function updateCards(_filters, rows){
     //filters - array of filters currently applied
     //rows - array of row components that pass the filters
