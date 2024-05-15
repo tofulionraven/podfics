@@ -115,6 +115,7 @@ function createCard(data) {
     info.classList.add("info")
 
     details.innerHTML = `<ul class="no-bullets">
+    <li><i class="fa-regular fa-star"></i> ${data.ao3}</li>
     <li><i class="fa-solid fa-feather-pointed"></i> ${data.Author}</li>
     <li><i class="fa-solid fa-microphone-lines"></i> ${data.Podcaster}
     </ul>`
