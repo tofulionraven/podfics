@@ -16,7 +16,7 @@ async function load_data() {
         data:full_data, //assign data to table
         layout:"fitData", //fit columns to width of table (optional)
         pagination:true,
-        paginationSize:30,  // Change number of rows displayed
+        paginationSize:50,  // Change number of rows displayed
         
         columns:[
             {
