@@ -22,7 +22,7 @@ async function load_data() {
             {
             
                 title:"Stream",
-                field:"other",
+                field:"Spotify/stream",
                 formatter:"html",
                 headerFilter:null,
                 headerFilterFunc:null,
@@ -32,7 +32,7 @@ async function load_data() {
             {
             
                 title:"Link",
-                field:"ao3",
+                field:"Archive/Blog Link",
                 formatter:"html",
                 headerFilter:null,
                 headerFilterFunc:null,
@@ -59,7 +59,7 @@ async function load_data() {
             },
             {
                 title: "Ship",
-                field: "FANDOM NAME",
+                field: "pairing name",
                 headerFilter: "select",
                 headerFilterFunc: "=",
                 width: "120",
