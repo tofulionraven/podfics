@@ -22,7 +22,7 @@ async function load_data() {
             {
             
                 title:"Stream",
-                field:"Spotify/Stream",
+                field:"other",
                 formatter:"html",
                 headerFilter:null,
                 headerFilterFunc:null,
@@ -32,7 +32,7 @@ async function load_data() {
             {
             
                 title:"Link",
-                field:"Link",
+                field:"ao3",
                 formatter:"html",
                 headerFilter:null,
                 headerFilterFunc:null,
