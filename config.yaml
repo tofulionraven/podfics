@@ -7,20 +7,21 @@ clean_data:
     - Title
     - Podcaster
     - Author
+    - Total
     - Status
-    - Chapters
     - Time
     - Ship or Main Character
-    - Link
-    - Spotify/stream
+    - Archive/Blog Link
+    - Spotify
     - Third Link
-    - FANDOM NAME
+    - Pairing name
+    - Date Podfic Published/Updated
+    - Date Fic Published
+    - Fic Link
   link_fields:
-    - Link
-    - Spotify/stream
+    - Archive/Blog Link
+    - Spotify
     - Third Link
-  no_filter_fields:
-    - Link
 website:
   data: ./data/sheet.csv
   table_entries_per_page: 100

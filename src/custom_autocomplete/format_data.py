@@ -47,6 +47,10 @@ def format_links(raw_link: str) -> str:
         return f'<a href="{raw_link}" target="_blank"><img src="{img_link}" alt="{Path(img_link).stem}" class="link_icon"></a>'
     return ""
 
+def fic_link(frame: pd.DataFrame) -> str:
+    return f'<a href="{raw_link}" target="_blank"><img src="{img_link}" alt="{Path(img_link).stem}" class="link_icon"></a>'
+    return ""
+
 
 
 class DataCleaner:
@@ -87,11 +91,14 @@ class DataCleaner:
         retval.remove("")
         print("\n".join(sorted(list(retval))))
         return data
-         
+
+
+    
+    
     def clean(self) -> None:
         data = pd.read_csv(self.config["raw_data"]["name"], header=0)
         data.columns = list(map(str.strip, data.columns))
-        self.link_cleanup(data.fillna(""))
+        data = self.link_cleanup(data.fillna(""))
         data = (
             data.fillna("")
             .pipe(self.link_cleanup)
@@ -105,7 +112,7 @@ class DataCleaner:
                 other=lambda x: x.other.apply(format_links)
             )
             .drop(columns=["is_ao3"])
-            .fillna("")
+            .assign(linked_title=lambda x: x.apply(lambda y: f'<a href="{y["Fic Link"]}" target="_blank">{y["Title"]}</a>', axis=1))
         )
         data.to_csv(self.config["clean_data"]["name"], index=False, header=True)
         data.to_json(self.config["clean_data"]["json"], orient="records")

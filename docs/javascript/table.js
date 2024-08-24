@@ -39,10 +39,10 @@ async function load_data() {
                 width: "45",
                 resizable: false,
             },
-            
             {    
                 title:"Title",
-                field:"Title",
+                field:"linked_title",
+                formatter: "html",
                 headerFilter:"input",
                 headerFilterFunc:"like",
                 width:"250",
@@ -53,18 +53,39 @@ async function load_data() {
                 width:"200",
             },
             {
+                title:"Podfic Date",
+                field:"Date Podfic Published/Updated",
+                formatter:"datetime",
+                formatterParams:{
+                    inputFormat:"dd-MMM-yyyy",
+                    outputFormat:"dd-MMM-yyyy",
+                    invalidPlaceholder:"unknown",
+                },
+                width:"100",
+            },
+            {
+                title:"Fic Date",
+                field:"Date Fic Published",
+                formatter:"datetime",
+                formatterParams:{
+                    inputFormat:"dd-MMM-yyyy",
+                    outputFormat:"dd-MMM-yyyy",
+                    invalidPlaceholder:"unknown",
+                },
+                width:"100",
+            },
+            {
                 title:"Podficcer",
                 field:"Podcaster",
                 width:"200",
             },
             {
                 title: "Ship",
-                field: "FANDOM NAME",
+                field: "Pairing name",
                 headerFilter: "select",
                 headerFilterFunc: "=",
                 width: "120",
                 resizable: false,
-            
             },
             {
                 title:"Characters",
@@ -86,7 +107,7 @@ async function load_data() {
             },
             {
                 title: "Chapters",
-                field: "chapters",
+                field: "Total",
                 resizable: false,
             }
             
