@@ -13,6 +13,21 @@ function ficLinkFilter(headerValue, rowValue, rowData, filterParams){
     return temp.firstChild.textContent.toLowerCase().includes(headerValue.toLowerCase())
 }
 
+function ficLinkSorter(a, b, aRow, bRow, column, dir, sorterParams){
+    //a, b - the two values being compared
+    //aRow, bRow - the row components for the values being compared (useful if you need to access additional fields in the row data for the sort)
+    //column - the column component for the column being sorted
+    //dir - the direction of the sort ("asc" or "desc")
+    //sorterParams - sorterParams object from column definition array
+    let temp = document.createElement("div")
+    temp.innerHTML = a  
+    let aText = temp.firstChild.textContent.toLowerCase()
+    temp = document.createElement("div")
+    temp.innerHTML = b
+    let bText = temp.firstChild.textContent.toLowerCase()
+
+    return aText.localeCompare(bText); 
+}
 
 async function load_data() {
     var full_data;
@@ -58,6 +73,7 @@ async function load_data() {
                 formatter: "html",
                 headerFilter:"input",
                 headerFilterFunc:ficLinkFilter,
+                sorter:ficLinkSorter,
                 width:"250",
             },
             {

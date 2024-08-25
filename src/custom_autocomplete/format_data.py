@@ -1,5 +1,6 @@
 """ Include any custom transformations needed to clean the fields and entries of the data set.
 """
+
 import argparse
 from pathlib import Path
 from urllib.parse import urlparse
@@ -23,8 +24,8 @@ fa_maps = {
     "soundcloud.com": "fa-brands fa-soundcloud",
     "www.youtube.com": "fa-brands fa-youtube",
     "youtu.be": "fa-brands fa-youtube",
-    
 }
+
 
 def format_fa_links(raw_link: str) -> str:
     stem = urlparse(raw_link).netloc
@@ -47,11 +48,6 @@ def format_links(raw_link: str) -> str:
         return f'<a href="{raw_link}" target="_blank"><img src="{img_link}" alt="{Path(img_link).stem}" class="link_icon"></a>'
     return ""
 
-def fic_link(frame: pd.DataFrame) -> str:
-    return f'<a href="{raw_link}" target="_blank"><img src="{img_link}" alt="{Path(img_link).stem}" class="link_icon"></a>'
-    return ""
-
-
 
 class DataCleaner:
     def __init__(self) -> None:
@@ -59,7 +55,11 @@ class DataCleaner:
             prog="dataprep",
             description="Custom data transformations before hosting for autocomplete.",
         )
-        parser.add_argument("config_file", help="Path to the yaml configuration file.", default="config.yaml")
+        parser.add_argument(
+            "config_file",
+            help="Path to the yaml configuration file.",
+            default="config.yaml",
+        )
         self.args = parser.parse_args()
 
         with open(self.args.config_file, encoding="utf-8", mode="rt") as config_file:
@@ -77,13 +77,13 @@ class DataCleaner:
             if row[col] != "" and "archiveofourown.org" not in row[col]:
                 return row[col]
         return ""
-    
+
     def link_cleanup(self, data: pd.DataFrame) -> pd.DataFrame:
         return data.assign(
             ao3=data.apply(self.get_ao3_link, axis=1),
-            other=data.apply(self.get_non_ao3_link, axis=1)
+            other=data.apply(self.get_non_ao3_link, axis=1),
         )
-    
+
     def get_unique_streams(self, data) -> set:
         retval = {""}
         retval.update(data.ao3.apply(lambda x: urlparse(x).netloc).unique())
@@ -92,9 +92,6 @@ class DataCleaner:
         print("\n".join(sorted(list(retval))))
         return data
 
-
-    
-    
     def clean(self) -> None:
         data = pd.read_csv(self.config["raw_data"]["name"], header=0)
         data.columns = list(map(str.strip, data.columns))
@@ -102,17 +99,21 @@ class DataCleaner:
         data = (
             data.fillna("")
             .pipe(self.link_cleanup)
-            .pipe(self.get_unique_streams)
-            [self.config["clean_data"]["used_fields"]]
+            .pipe(self.get_unique_streams)[self.config["clean_data"]["used_fields"]]
             .replace("", None)
             .assign(is_ao3=lambda x: ~x.ao3.isnull())
             .sort_values(["is_ao3", "Title"], ascending=[False, True])
             .assign(
                 ao3=lambda x: x.ao3.apply(format_links),
-                other=lambda x: x.other.apply(format_links)
+                other=lambda x: x.other.apply(format_links),
             )
             .drop(columns=["is_ao3"])
-            .assign(linked_title=lambda x: x.apply(lambda y: f'<a href="{y["Fic Link"]}" target="_blank">{y["Title"]}</a>', axis=1))
+            .assign(
+                linked_title=lambda x: x.apply(
+                    lambda y: f'<a href="{y["Fic Link"]}" target="_blank">{y["Title"]}</a>',
+                    axis=1,
+                )
+            )
         )
         data.to_csv(self.config["clean_data"]["name"], index=False, header=True)
         data.to_json(self.config["clean_data"]["json"], orient="records")
@@ -120,6 +121,7 @@ class DataCleaner:
 
 def main() -> None:
     DataCleaner().clean()
+
 
 if __name__ == "__main__":
     main()
