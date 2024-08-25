@@ -1,6 +1,19 @@
 const data_url = "https://raw.githubusercontent.com/tofulionraven/podfics/main/data/clean.json";
 const local_data_url = "../data/clean.json"
 
+function ficLinkFilter(headerValue, rowValue, rowData, filterParams){
+    // <a href...>Title</a>, want to search only "Title" and not the href.
+    //headerValue - the value of the header filter element
+    //rowValue - the value of the column in this row
+    //rowData - the data for the row being filtered
+    //filterParams - params object passed to the headerFilterFuncParams property
+
+    let temp = document.createElement("div")
+    temp.innerHTML = rowValue  
+    return temp.firstChild.textContent.toLowerCase().includes(headerValue.toLowerCase())
+}
+
+
 async function load_data() {
     var full_data;
     await fetch(local_data_url)
@@ -44,7 +57,7 @@ async function load_data() {
                 field:"linked_title",
                 formatter: "html",
                 headerFilter:"input",
-                headerFilterFunc:"like",
+                headerFilterFunc:ficLinkFilter,
                 width:"250",
             },
             {
