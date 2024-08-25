@@ -67,6 +67,18 @@ async function load_data() {
                 width: "45",
                 resizable: false,
             },
+            {
+                title:"Podfic Date",
+                field:"Date Podfic Published/Updated",
+                formatter:"datetime",
+                formatterParams:{
+                    inputFormat:"yyyy-mm-dd",
+                    outputFormat:"yyyy-mm-dd",
+                    invalidPlaceholder:"unknown",
+                },
+                width:"100",
+                resizable: false,
+            },
             {    
                 title:"Title",
                 field:"linked_title",
@@ -82,17 +94,11 @@ async function load_data() {
                 width:"200",
             },
             {
-                title:"Podfic Date",
-                field:"Date Podfic Published/Updated",
-                formatter:"datetime",
-                formatterParams:{
-                    inputFormat:"yyyy-mm-dd",
-                    outputFormat:"yyyy-mm-dd",
-                    invalidPlaceholder:"unknown",
-                },
-                width:"100",
-                resizable: false,
+                title:"Podficcer",
+                field:"Podcaster",
+                width:"200",
             },
+            
             {
                 title:"Fic Date",
                 field:"Date Fic Published",
@@ -105,11 +111,7 @@ async function load_data() {
                 width:"100",
                 resizable: false,
             },
-            {
-                title:"Podficcer",
-                field:"Podcaster",
-                width:"200",
-            },
+
             {
                 title: "Ship",
                 field: "Pairing name",
