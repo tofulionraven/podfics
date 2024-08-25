@@ -57,8 +57,8 @@ async function load_data() {
                 field:"Date Podfic Published/Updated",
                 formatter:"datetime",
                 formatterParams:{
-                    inputFormat:"dd-MMM-yyyy",
-                    outputFormat:"dd-MMM-yyyy",
+                    inputFormat:"yyyy-mm-dd",
+                    outputFormat:"yyyy-MMM-dd",
                     invalidPlaceholder:"unknown",
                 },
                 width:"100",
@@ -68,8 +68,8 @@ async function load_data() {
                 field:"Date Fic Published",
                 formatter:"datetime",
                 formatterParams:{
-                    inputFormat:"dd-MMM-yyyy",
-                    outputFormat:"dd-MMM-yyyy",
+                    inputFormat:"yyyy-mm-dd",
+                    outputFormat:"yyyy-MMM-dd",
                     invalidPlaceholder:"unknown",
                 },
                 width:"100",
