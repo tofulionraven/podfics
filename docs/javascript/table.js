@@ -56,6 +56,7 @@ async function load_data() {
                 headerFilterFunc:null,
                 width: "45",
                 resizable: false,
+                headerSort:false,
             },
             {
             
@@ -66,6 +67,7 @@ async function load_data() {
                 headerFilterFunc:null,
                 width: "45",
                 resizable: false,
+                headerSort:false,
             },
             {
                 title:"Podfic Date",
@@ -132,16 +134,19 @@ async function load_data() {
                 headerFilter: "select",
                 headerFilterFunc: "=",
                 resizable: false,
+                headerSort:false,
             },
             {
                 title: "Status",
                 field: "Status",
                 resizable: false,
+                headerSort:false,
             },
             {
                 title: "Chapters",
                 field: "Total",
                 resizable: false,
+                headerSort:false
             }
             
         ],
