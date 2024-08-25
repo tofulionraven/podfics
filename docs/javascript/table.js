@@ -75,6 +75,7 @@ async function load_data() {
                     invalidPlaceholder:"unknown",
                 },
                 width:"100",
+                resizable: false,
             },
             {
                 title:"Fic Date",
@@ -86,6 +87,7 @@ async function load_data() {
                     invalidPlaceholder:"unknown",
                 },
                 width:"100",
+                resizable: false,
             },
             {
                 title:"Podficcer",
