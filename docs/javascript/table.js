@@ -58,7 +58,7 @@ async function load_data() {
                 formatter:"datetime",
                 formatterParams:{
                     inputFormat:"yyyy-mm-dd",
-                    outputFormat:"yyyy-MMM-dd",
+                    outputFormat:"yyyy-mm-dd",
                     invalidPlaceholder:"unknown",
                 },
                 width:"100",
@@ -69,7 +69,7 @@ async function load_data() {
                 formatter:"datetime",
                 formatterParams:{
                     inputFormat:"yyyy-mm-dd",
-                    outputFormat:"yyyy-MMM-dd",
+                    outputFormat:"yyyy-mm-dd",
                     invalidPlaceholder:"unknown",
                 },
                 width:"100",
