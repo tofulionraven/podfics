@@ -160,6 +160,10 @@ async function load_data() {
                 // multiselect:true,
                 autocomplete:false,
             },
-        }
+        },
+        initialSort:[
+            {column:"linked_title", dir:"asc"},
+            {column:"Date Podfic Published/Updated", dir:"desc"},
+        ]
     });
 }
