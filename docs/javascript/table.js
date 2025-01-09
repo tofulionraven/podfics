@@ -100,19 +100,7 @@ async function load_data() {
                 field:"Podcaster",
                 width:"200",
             },
-            
-            {
-                title:"Fic Date",
-                field:"Date Fic Published",
-                formatter:"datetime",
-                formatterParams:{
-                    inputFormat:"yyyy-mm-dd",
-                    outputFormat:"yyyy-mm-dd",
-                    invalidPlaceholder:"unknown",
-                },
-                width:"100",
-                resizable: false,
-            },
+
 
             {
                 title: "Ship",
@@ -141,6 +129,19 @@ async function load_data() {
                 field: "Status",
                 resizable: false,
                 headerSort:false,
+            },
+                        
+            {
+                title:"Fic Date",
+                field:"Date Fic Published",
+                formatter:"datetime",
+                formatterParams:{
+                    inputFormat:"yyyy-mm-dd",
+                    outputFormat:"yyyy-mm-dd",
+                    invalidPlaceholder:"unknown",
+                },
+                width:"100",
+                resizable: false,
             },
             {
                 title: "Chapters",
