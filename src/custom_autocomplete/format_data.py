@@ -12,6 +12,7 @@ image_maps = {
     "archiveofourown.org": "./imgs/archive_of_our_own.png",
     "open.spotify.com": "./imgs/spotify.png",
     "archive.org": "./imgs/archive.png",
+    "youtube.com": "./imgs/youtube.png",
     # Add more images here "URL": "./images/filename.png",
 }
 
