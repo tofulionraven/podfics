@@ -121,8 +121,7 @@ async function load_data() {
                 field:"Time",
                 headerFilter: "select",
                 headerFilterFunc: "=",
-                resizable: false,
-                headerSort:false,
+
             },
             {
                 title: "Status",
