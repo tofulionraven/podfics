@@ -105,7 +105,7 @@ async function load_data() {
             {
                 title: "Ship",
                 field: "Pairing name",
-                headerFilter: "select",
+                headerFilter: "list",
                 headerFilterFunc: "=",
                 width: "120",
                 resizable: false,
@@ -119,7 +119,7 @@ async function load_data() {
             {
                 title:"Length",
                 field:"Time",
-                headerFilter: "select",
+                headerFilter: "list",
                 headerFilterFunc: "=",
 
             },
