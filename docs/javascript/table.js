@@ -31,7 +31,7 @@ function ficLinkSorter(a, b, aRow, bRow, column, dir, sorterParams){
 
 async function load_data() {
     var full_data;
-    await fetch(local_data_url)
+    await fetch(data_url)
         .then((response) => response.json())
         .then(json => {full_data = json;})
         .catch(
