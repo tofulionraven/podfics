@@ -1,5 +1,5 @@
-const data_url = "https://raw.githubusercontent.com/tofulionraven/podfics/main/data/clean.json";
-const local_data_url = "../data/clean.json"
+// const data_url = "https://raw.githubusercontent.com/tofulionraven/podfics/main/data/clean.json";
+const data_url = "../data/clean.json"
 
 function ficLinkFilter(headerValue, rowValue, rowData, filterParams){
     // <a href...>Title</a>, want to search only "Title" and not the href.
