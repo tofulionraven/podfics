@@ -1,5 +1,5 @@
 const data_url = "https://raw.githubusercontent.com/tofulionraven/podfics/main/data/clean.json";
-// const data_url = "../data/clean.json"
+//const data_url = "../data/clean.json"
 
 function ficLinkFilter(headerValue, rowValue, rowData, filterParams){
     // <a href...>Title</a>, want to search only "Title" and not the href.
@@ -48,6 +48,18 @@ async function load_data() {
         
         columns:[
             {
+                title:"Podfic Date",
+                field:"Date Podfic Published/Updated",
+                formatter:"datetime",
+                formatterParams:{
+                    inputFormat:"yyyy-mm-dd",
+                    outputFormat:"yyyy-mm-dd",
+                    invalidPlaceholder:"unknown",
+                },
+                width:"80",
+                
+            },
+            {
             
                 title:"Stream",
                 field:"other",
@@ -69,18 +81,7 @@ async function load_data() {
                 resizable: false,
                 headerSort:false,
             },
-            {
-                title:"Podfic Date",
-                field:"Date Podfic Published/Updated",
-                formatter:"datetime",
-                formatterParams:{
-                    inputFormat:"yyyy-mm-dd",
-                    outputFormat:"yyyy-mm-dd",
-                    invalidPlaceholder:"unknown",
-                },
-                width:"100",
-                resizable: false,
-            },
+
             {    
                 title:"Title",
                 field:"linked_title",
@@ -100,7 +101,12 @@ async function load_data() {
                 field:"Podcaster",
                 width:"200",
             },
-
+            {
+                title: "Chapters",
+                field: "Total",
+                resizable: false,
+                headerSort:false
+            },
 
             {
                 title: "Ship",
@@ -142,12 +148,7 @@ async function load_data() {
                 width:"100",
                 resizable: false,
             },
-            {
-                title: "Chapters",
-                field: "Total",
-                resizable: false,
-                headerSort:false
-            }
+
             
         ],
         columnDefaults:{
